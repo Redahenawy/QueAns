@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.media-body {
+	margin-left: 20px;
+}
 .counters 
 {
 	margin-right: 30px;
@@ -56,4 +59,44 @@
 form.form-delete 
 {
 	display: inline;
+}
+
+.vote-controls 
+{
+  min-width: 60px;	
+  marign-right: 30px;
+  text-align: center;
+  color: $gray-700;
+
+  span, a {
+    display: block;
+  }
+
+  span {
+    &.votes-count {
+      font-size: 25px;
+    }
+    &votes-favorites-count {
+      font-size: 12px;
+    }
+  }
+
+  a {
+    color: $gray-600;
+    cursor: pointer;
+
+    &.off, &.off:hover {
+      color: $gray-500;
+    }
+
+    &.favorite {
+	    &.favorited, &.favorited:hover {
+	      color: $warning;
+	    }
+    }
+
+    &.vote-accepted {
+       color: $green;
+    }
+  }
 }

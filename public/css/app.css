@@ -10646,6 +10646,10 @@ a.text-dark:focus {
   }
 }
 
+.media-body {
+  margin-left: 20px;
+}
+
 .counters {
   margin-right: 30px;
   font-size: 10px;
@@ -10685,5 +10689,44 @@ a.text-dark:focus {
 
 form.form-delete {
   display: inline;
+}
+
+.vote-controls {
+  min-width: 60px;
+  marign-right: 30px;
+  text-align: center;
+  color: #495057;
+}
+
+.vote-controls span,
+.vote-controls a {
+  display: block;
+}
+
+.vote-controls span.votes-count {
+  font-size: 25px;
+}
+
+.vote-controls spanvotes-favorites-count {
+  font-size: 12px;
+}
+
+.vote-controls a {
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.vote-controls a.off,
+.vote-controls a.off:hover {
+  color: #adb5bd;
+}
+
+.vote-controls a.favorite.favorited,
+.vote-controls a.favorite.favorited:hover {
+  color: #ffed4a;
+}
+
+.vote-controls a.vote-accepted {
+  color: #38c172;
 }
 
