@@ -54,4 +54,10 @@ class Question extends Model
 
     }
 
+    public function AcceptBestAnswer(Answer $answer)
+    {
+        $this->best_answer_id = $answer->id;
+        $this->save();
+    }
+
 }
