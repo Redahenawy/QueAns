@@ -26,7 +26,9 @@
                       @csrf
                       <input type="hidden" name="vote" value="1">
                     </form>
+
                     <span class="votes-count">{{ $question->votes_count }}</span>
+
                     <a title="This question is not useful"
                      class="vote-down {{ Auth::guest() ? 'off' : '' }}" 
                      onclick="event.preventDefault(); document.getElementById('down-vote-question-{{ $question->id }}').submit();">
@@ -36,6 +38,7 @@
                       @csrf
                       <input type="hidden" name="vote" value="-1">
                     </form>
+                    
                     <a title="Click to make as favorite question (Click again to undo)" class="favorite mt-2 {{ Auth::guest() ? 'off' : ($question->is_favorited ? 'favorited' : '') }}" onclick="event.preventDefault(); document.getElementById('favorite-question-{{ $question->id }}').submit();">
                       <i class="fas fa-star fa-2x"></i>
                       <span class="favorite-count">{{ $question->favorites_count }}</span>
