@@ -12,7 +12,7 @@
 
  @php 
   $formId = $name ."-". $model->id ;
-  $votUrl = "/" .$firstURISegment. "/" .$model->id. "/vote" ;
+  $votUrl = "/{$firstURISegment}/{$model->id}/vote" ;
 @endphp
 
 
