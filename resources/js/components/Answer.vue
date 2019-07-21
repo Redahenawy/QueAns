@@ -14,18 +14,18 @@ export default {
 	},
 
 	methods: {
-        edit(){
+        edit() {
             this.beforeEditCache = this.body;
             this.editing         = true;
         },
 
-        cancel(){
+        cancel() {
         	this.body     = this.beforeEditCache;
         	this.editing  = false;
         },
 
 	    update() {
-	        axios.patch(`/questions/${this.questionId}/answers/${this.id}`, {
+	        axios.patch(this.endpoint, {
 	        	 body: this.body
 	        })  
 	        .then(res => {
@@ -38,11 +38,26 @@ export default {
 	           alert(err.response.data.message);
 	        });
 	    },
+
+	    destroy() {
+            if (confirm('Are You Sure?')) {
+	           	axios.delete(this.endpoint)
+	           	.then(res => {
+	           		$(this.$el).fadeOut(500, () => {
+	           			alert(res.data.message);
+	           		})
+	           	});
+            }
+	    }
 	},
 
 	computed: {
-    	isInvalid(){
+    	isInvalid() {
     		return this.body.length < 10;
+    	},
+
+    	endpoint() {
+    		return `/questions/${this.questionId}/answers/${this.id}` ;
     	}
     }
 }
